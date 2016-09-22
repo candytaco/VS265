@@ -1,0 +1,34 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{t.zhang}
+\begin{document}
+\begin{align*}
+\frac{\partial E}{\partial w_2} &= \frac{\partial \sum\left(T_i - z_i\right)^2}{\partial w_2}\\
+&= 2(T - z)\frac{\partial z}{\partial w_2}\\
+&= 2(T - z) \frac{\partial\left(\sigma\left( w_2^T y + b_2\right)\right)}{\partial w_2}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right) x
+\\ \\
+\frac{\partial E}{\partial b_2} &= \frac{\partial \sum\left(T_i - z_i\right)^2}{\partial b_2}\\
+&= 2(T - z)\frac{\partial z}{\partial b_2}\\
+&= 2(T - z) \frac{\partial\left(\sigma\left( w_2^T y + b_2\right)\right)}{\partial w_2}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right)
+\\ \\
+\frac{\partial E}{\partial w_1} &= \frac{\partial \sum\left(T_i - z_i\right)^2}{\partial w_1}\\
+&= 2(T - z)\frac{\partial z}{\partial w_1}\\
+&= 2(T - z) \frac{\partial\left(\sigma\left( w_2^T y + b_2\right)\right)}{\partial w_1}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right) w_2 \frac{\partial y}{\partial w_1}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right)w_2 \frac{\partial \left(\sigma\left(w_1^T x + b_1\right)\right)}{\partial w_1}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right)w_2 \:\sigma'\left(w_1^T x + b_1\right) x
+\\ \\
+\frac{\partial E}{\partial b_1} &= \frac{\partial \sum\left(T_i - z_i\right)^2}{\partial b_1}\\
+&= 2(T - z)\frac{\partial z}{\partial b_1}\\
+&= 2(T - z) \frac{\partial\left(\sigma\left( w_2^T y + b_2\right)\right)}{\partial b_1}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right) w_2 \frac{\partial y}{\partial b_1}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right)w_2 \frac{\partial \left(\sigma\left(w_1^T x + b_1\right)\right)}{\partial b_1}\\
+&= 2(T - z) \sigma'\left(w_2^T y + b_2 \right)w_2 \:\sigma'\left(w_1^T x + b_1\right)
+\end{align*}
+\end{document}
