@@ -18,7 +18,7 @@ VIDEO_TAG = """<video controls>
  Your browser does not support the video tag.
 </video>"""
 
-if sys.platform in ['cygwin','win32']:
+if True:# sys.platform in ['cygwin','win32']:
     def anim_to_html(anim,fps=1):
         if not hasattr(anim, '_encoded_video'):
             N = 10 # length of fileID
